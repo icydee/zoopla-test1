@@ -1,0 +1,17 @@
+version: '2'
+
+services:
+
+  zoopla-server:
+    build:
+      context: .
+      dockerfile: ./docker/build-server/Dockerfile
+    command: '/bin/bash'
+    container_name: 'zoopla-server'
+    image: 'icydee/zoopla-server'
+    volumes:
+      - ./bin:/home/icydee/zoopla-server/bin
+      - ./etc:/home/icydee/zoopla-server/etc
+      - ./log:/home/icydee/zoopla-server/log
+      - ./lib:/home/icydee/zoopla-server/lib
+      - ./t:/home/icydee/zoopla-server/t
